@@ -1,4 +1,19 @@
 package com.codebase.people;
 
-public class Person {
+public abstract class Person {
+	String name;
+
+	public Person(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		if (name != null) {
+			this.name = name;
+		}
+	}
 }

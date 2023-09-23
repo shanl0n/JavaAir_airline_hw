@@ -1,4 +1,19 @@
 package com.codebase.people.crew;
 
-public class CockpitCrew {
+public class CockpitCrew extends FlightCrew{
+
+	private String licenceNumber;
+
+	public CockpitCrew(CrewRank rank, String name, String licenceNumber) {
+		super(rank, name);
+		this.licenceNumber = licenceNumber;
+	}
+
+	public String getLicenceNumber() {
+		return licenceNumber;
+	}
+
+	public String takeoff() {
+		return "I believe I can fly!";
+	}
 }
