@@ -3,7 +3,7 @@ package com.codebase.flights.plane;
 public enum PlaneType {
 
 	BOEING747(467,412_000),
-	PIPERCHEYENNE(9,5466);
+	PIPERCHEYENNE(3,5466);
 
 	private final int capacity;
 	private final int weight;

@@ -47,13 +47,31 @@ public class FlightTest {
 	}
 
 	@Test
+	public void canSetFlightNumber() {
+		flight.setFlightNumber("DTK253");
+		assertEquals("DTK253", flight.getFlightNumber());
+	}
+
+	@Test
 	public void hasDepartureAirport() {
 		assertEquals("EDI", flight.getDepartureAirport());
 	}
 
 	@Test
+	public void canSetDepartureAirport() {
+		flight.setDepartureAirport("OMG");
+		assertEquals("OMG", flight.getDepartureAirport());
+	}
+
+	@Test
 	public void hasDestinationAirport() {
 		assertEquals("FUN", flight.getDestinationAirport());
+	}
+
+	@Test
+	public void canSetDestinationAirport() {
+		flight.setDestinationAirport("WTF");
+		assertEquals("WTF", flight.getDestinationAirport());
 	}
 
 	@Test
@@ -96,5 +114,10 @@ public class FlightTest {
 		assertEquals(2, flight.getPassengerCount());
 	}
 
-
+	@Test
+	public void canReturnAvailableSeats() {
+		flight.addPassenger(passenger);
+		flight.addPassenger(passenger2);
+		assertEquals(465, flight.remainingSeats());
+	}
 }
