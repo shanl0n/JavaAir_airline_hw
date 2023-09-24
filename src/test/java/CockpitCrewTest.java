@@ -1,4 +1,4 @@
-import com.codebase.people.crew.CockpitCrew;
+import  com.codebase.people.crew.CockpitCrew;
 import com.codebase.people.crew.CrewRank;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class CockpitCrewTest {
 	}
 
 	@Test
-	public void hasLicence() {
+	public void canGetLicence() {
 		assertEquals("P1lot", cockpitCrew.getLicenceNumber());
 	}
 

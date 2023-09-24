@@ -13,8 +13,6 @@ public class CockpitCrew extends FlightCrew{
 		return licenceNumber;
 	}
 
-
-
 	public String takeoff() {
 		return "I believe I can fly!";
 	}
