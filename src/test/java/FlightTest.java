@@ -1,3 +1,4 @@
+import com.codebase.flights.AirportCodes;
 import com.codebase.flights.Flight;
 import com.codebase.flights.plane.Plane;
 import com.codebase.flights.plane.PlaneType;
@@ -25,8 +26,8 @@ public class FlightTest {
 
 	@Before
 	public void before() {
-		plane = new Plane(PlaneType.BOEING747);
-		flight = new Flight(plane, "FR756", "EDI", "FUN", "12:00");
+		plane = new Plane(PlaneType.PIPERCHEYENNE);
+		flight = new Flight(plane, "DTK253", AirportCodes.EDINBURGH, AirportCodes.FUNAFUTI, "12:00");
 		passenger = new Passenger("Daniel", 2);
 		passenger2 = new Passenger("Jack", 3);
 		passenger3 = new Passenger("Rose", 1);
@@ -43,7 +44,7 @@ public class FlightTest {
 
 	@Test
 	public void hasFlightNumber() {
-		assertEquals("FR756", flight.getFlightNumber());
+		assertEquals("DTK253", flight.getFlightNumber());
 	}
 
 	@Test
@@ -58,20 +59,8 @@ public class FlightTest {
 	}
 
 	@Test
-	public void canSetDepartureAirport() {
-		flight.setDepartureAirport("OMG");
-		assertEquals("OMG", flight.getDepartureAirport());
-	}
-
-	@Test
 	public void hasDestinationAirport() {
 		assertEquals("FUN", flight.getDestinationAirport());
-	}
-
-	@Test
-	public void canSetDestinationAirport() {
-		flight.setDestinationAirport("WTF");
-		assertEquals("WTF", flight.getDestinationAirport());
 	}
 
 	@Test
@@ -115,9 +104,18 @@ public class FlightTest {
 	}
 
 	@Test
+	public void canAddPassenger__flightFull() {
+		flight.addPassenger(passenger);
+		flight.addPassenger(passenger2);
+		flight.addPassenger(passenger3);
+		flight.addPassenger(passenger4);
+		assertEquals(3, flight.getPassengerCount());
+	}
+
+	@Test
 	public void canReturnAvailableSeats() {
 		flight.addPassenger(passenger);
 		flight.addPassenger(passenger2);
-		assertEquals(465, flight.remainingSeats());
+		assertEquals(1, flight.remainingSeats());
 	}
 }

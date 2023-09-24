@@ -11,17 +11,17 @@ public class PlaneTest {
 	Plane plane;
 
 	@Before
-	public void before() { plane = new Plane(PlaneType.PIPERCHEYENNE);}
+	public void before() { plane = new Plane(PlaneType.BOEING747);}
 
 	@Test
 	public void canGetPlaneType() {
-		assertEquals(PlaneType.PIPERCHEYENNE, plane.getType());}
+		assertEquals(PlaneType.BOEING747, plane.getType());}
 
 	@Test
 	public void canGetCapacity() {
-		assertEquals(9, plane.getCapacity());}
+		assertEquals(467, plane.getCapacity());}
 
 	@Test
 	public void canGetWeight() {
-		assertEquals(5466, plane.getWeight());}
+		assertEquals(412_000, plane.getWeight());}
 }
